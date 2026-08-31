@@ -22,7 +22,7 @@ html, body {
 }
 
 body {
-  background-image: url("../assets/recipe-bg.webp");
+  background-image: url("recipe-bg.webp");
   background-size: cover;      /* fills the screen */
   background-position: center; /* keeps it centered */
   background-repeat: no-repeat;
@@ -55,7 +55,7 @@ body::before {
   pointer-events: none;
   z-index: 1;  /* behind all .bunfam content */
 
-  background-image: url("../assets/shimmer.webp");
+  background-image: url("shimmer.webp");
   background-repeat: repeat;
   background-size: 200px 200px;
   opacity: 0.40;  /* strong shimmer */

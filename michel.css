@@ -19,7 +19,7 @@ html, body {
 ========================= */
 body {
   position: relative;
-  background-image: url("../assets/michel-bg.webp");
+  background-image: url("michel-bg.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -47,7 +47,7 @@ body::after {
   pointer-events: none;
   z-index: 2;
 
-  background-image: url("../assets/shimmer.webp");
+  background-image: url("shimmer.webp");
   background-repeat: repeat;
   background-size: 200px 200px;
 

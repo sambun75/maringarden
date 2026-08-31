@@ -42,7 +42,7 @@ color: rgb(195, 11, 146);
 }
 
 .rabbit:hover {
-  background-image: url("../assets/rabbit.webp");
+  background-image: url("rabbit.webp");
   background-size: cover;
   background-position: center;
 }
@@ -62,7 +62,7 @@ color: rgb(195, 11, 146);
 
 .rabbit:hover::before,
 .rabbit:hover::after {
-  background-image: url("../assets/rabbit.webp"); /* must repeat */
+  background-image: url("rabbit.webp"); /* must repeat */
   opacity: 1;
   animation: glitch 0.2s infinite;
 }
@@ -72,7 +72,7 @@ color: rgb(195, 11, 146);
 }
 
 .home:hover {
-  background-image: url("../assets/garden-hover.webp");
+  background-image: url("garden-hover.webp");
   background-size: cover;
   background-position: center;
 }
@@ -92,7 +92,7 @@ color: rgb(195, 11, 146);
 
 .home:hover::before,
 .home:hover::after {
-  background-image: url("../assets/garden-hover.webp"); /* must repeat */
+  background-image: url("garden-hover.webp"); /* must repeat */
   opacity: 1;
   animation: glitch 1s infinite;
 }
@@ -100,7 +100,7 @@ color: rgb(195, 11, 146);
 
 
 #grid-itemsquirrel1:hover {
-  background-image: url("../assets/squirrel.webp");
+  background-image: url("squirrel.webp");
   background-size: cover;
   background-position: center;
 }
@@ -196,7 +196,7 @@ html, body {
 }
 
 body {
-  cursor: url('../assets/cursor-rabbit.png') 16 16, auto;
+  cursor: url('cursor-rabbit.png') 16 16, auto;
 }
 
 .cat {
@@ -204,7 +204,7 @@ body {
 }
 
 .cat:hover {
-  background-image: url("../assets/cat.webp");
+  background-image: url("cat.webp");
   background-size: cover;
   background-position: center;
 }
@@ -224,7 +224,7 @@ body {
 
 .cat:hover::before,
 .cat:hover::after {
-  background-image: url("../assets/cat.webp"); /* must repeat */
+  background-image: url("cat.webp"); /* must repeat */
   opacity: 1;
   animation: glitch 0.2s infinite;
 }
@@ -234,7 +234,7 @@ body {
 }
 
 .bike:hover {
-  background-image: url("../assets/velo.webp");
+  background-image: url("velo.webp");
   background-size: cover;
   background-position: center;
 }
@@ -252,7 +252,7 @@ body {
 
 .bike:hover::before,
 .bike:hover::after {
-  background-image: url("../assets/velo.webp"); /* must repeat */
+  background-image: url("velo.webp"); /* must repeat */
   opacity: 1;
   animation: glitch 0.2s infinite;
 }
@@ -262,7 +262,7 @@ body {
 }
 
 .pizza:hover {
-  background-image: url("../assets/pizza.webp");
+  background-image: url("pizza.webp");
   background-size: cover;
   background-position: center;
 }
@@ -282,7 +282,7 @@ body {
 
 .pizza:hover::before,
 .pizza:hover::after {
-  background-image: url("../assets/pizza.webp"); /* must repeat */
+  background-image: url("pizza.webp"); /* must repeat */
   opacity: 1;
   animation: glitch 0.1s infinite;
 }
@@ -292,7 +292,7 @@ body {
 }
 
 .beach:hover {
-  background-image: url("../assets/plage.webp");
+  background-image: url("plage.webp");
   background-size: cover;
   background-position: center;
 }
@@ -309,7 +309,7 @@ body {
 
 .beach:hover::before,
 .beach:hover::after {
-  background-image: url("../assets/plage.webp"); /* must repeat */
+  background-image: url("plage.webp"); /* must repeat */
   opacity: 1;
   animation: glitch 0.1s infinite;
 }
@@ -319,7 +319,7 @@ body {
 }
 
 .car:hover {
-  background-image: url("../assets/car.webp");
+  background-image: url("car.webp");
   background-size: cover;
   background-position: center;
 }
@@ -336,7 +336,7 @@ body {
 
 .car:hover::before,
 .car:hover::after {
-  background-image: url("../assets/car.webp"); /* must repeat */
+  background-image: url("car.webp"); /* must repeat */
   opacity: 1;
   animation: glitch 0.1s infinite;
 }
@@ -346,7 +346,7 @@ body {
 }
 
 .cream:hover {
-  background-image: url("../assets/miam.webp");
+  background-image: url("miam.webp");
   background-size: cover;
   background-position: center;
 }
@@ -363,7 +363,7 @@ body {
 
 .cream:hover::before,
 .cream:hover::after {
-  background-image: url("../assets/miam.webp"); /* must repeat */
+  background-image: url("miam.webp"); /* must repeat */
   opacity: 1;
   animation: glitch 0.1s infinite;
 }
@@ -373,7 +373,7 @@ body {
 }
 
 .cricri:hover {
-  background-image: url("../assets/cricri.webp");
+  background-image: url("cricri.webp");
   background-size: cover;
   background-position: center;
 }
@@ -391,7 +391,7 @@ body {
 
 .cricri:hover::before,
 .cricri:hover::after {
-  background-image: url("../assets/cricri.webp"); /* must repeat */
+  background-image: url("cricri.webp"); /* must repeat */
   opacity: 1;
   animation: glitch 0.2s infinite;
 }
