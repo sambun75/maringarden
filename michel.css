@@ -1,0 +1,116 @@
+/* =========================
+   RESET / BASE
+========================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: sans-serif;
+  background: #cce9db;
+}
+
+/* =========================
+   BACKGROUND IMAGE
+========================= */
+body {
+  position: relative;
+  background-image: url("../assets/michel-bg.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* =========================
+   DARK OVERLAY
+========================= */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* =========================
+   FULL PAGE SHIMMER
+========================= */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+
+  background-image: url("../assets/shimmer.webp");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+
+  opacity: 0.20;
+  mix-blend-mode: overlay;
+
+  animation: glitterNoise 8s linear infinite;
+}
+
+/* =========================
+   CONTENT
+========================= */
+.home {
+  position: relative;
+  z-index: 3; /* above overlays */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =========================
+   SHIMMER ANIMATION
+========================= */
+@keyframes glitterNoise {
+  0%   { background-position:   0   0; }
+  100% { background-position: 400px 400px; }
+}
+
+.audio-button-min {
+  position: fixed;
+  top: 40px;
+  left: 40px;
+
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+
+  background: rgba(255,255,255,0.35);
+  border: 1px solid rgba(0,0,0,0.15);
+
+  font-size: 22px;
+  line-height: 1;
+  color: rgba(0,0,0,0.35);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+
+  transition: transform 0.2s ease, opacity 0.2s ease, box-shadow 0.2s ease;
+
+  z-index: 9999999; /* above everything */
+}
+
+.audio-button-min:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+  box-shadow: 0 0 12px rgba(0,0,0,0.08);
+}
+
+.audio-button-min:active {
+  transform: scale(0.95);
+}

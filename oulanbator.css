@@ -1,0 +1,78 @@
+/* =========================
+   RESET / BASE
+========================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: sans-serif;
+  background: #cce9db;
+}
+
+/* =========================
+   BACKGROUND IMAGE
+========================= */
+body {
+  position: relative;
+  background-image: url("../assets/oulan-bg.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* =========================
+   DARK OVERLAY
+========================= */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* =========================
+   FULL PAGE SHIMMER
+========================= */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+
+  background-image: url("../assets/shimmer.webp");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+
+  opacity: 0.20;
+  mix-blend-mode: overlay;
+
+  animation: glitterNoise 8s linear infinite;
+}
+
+/* =========================
+   CONTENT
+========================= */
+.home {
+  position: relative;
+  z-index: 3; /* above overlays */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* =========================
+   SHIMMER ANIMATION
+========================= */
+@keyframes glitterNoise {
+  0%   { background-position:   0   0; }
+  100% { background-position: 400px 400px; }
+}

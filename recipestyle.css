@@ -1,0 +1,65 @@
+/* =========================
+   RESET / BASE
+========================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background: #cce9db;
+  color:blanchedalmond;
+  overflow: auto;
+  font-family: sans-serif;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background-image: url("../assets/recipe-bg.webp");
+  background-size: cover;      /* fills the screen */
+  background-position: center; /* keeps it centered */
+  background-repeat: no-repeat;
+}
+
+/* dark overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4); /* adjust darkness here */
+  pointer-events: none;}
+
+/* =========================
+   GLOBAL BACKGROUND SHIMMER
+========================= */
+.home {
+  position: relative;       
+  min-width: 20vw;
+  min-height: 20vh;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: visible; /* allow button to escape if needed */
+}
+
+.home::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;  /* behind all .bunfam content */
+
+  background-image: url("../assets/shimmer.webp");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  opacity: 0.40;  /* strong shimmer */
+  mix-blend-mode: overlay;
+
+  animation: glitterNoise 8s linear infinite 2s;
+}

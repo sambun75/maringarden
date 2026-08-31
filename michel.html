@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>michel</title>
+    <link rel="stylesheet" href="css/michel.css">
+</head>
+<body>
+<div class="home">
+
+<!-- Audio toggle button -->
+<button class="audio-button-min" id="audioBtn">▶︎</button>
+
+<!-- Audio element (hidden) -->
+<audio id="audio" src="assets/michel.mp3"></audio>
+
+<script>
+const audio = document.getElementById('audio');
+const btn = document.getElementById('audioBtn');
+
+btn.addEventListener('click', () => {
+  if (audio.paused) {
+    audio.play();
+    btn.textContent = "⏸︎"; // pause symbol
+  } else {
+    audio.pause();
+    btn.textContent = "▶︎"; // play symbol
+  }
+});
+
+// Optional: update button if audio ends
+audio.addEventListener('ended', () => {
+  btn.textContent = "▶︎";
+});
+</script>
+
+
+</div>
+</body>
+</html>

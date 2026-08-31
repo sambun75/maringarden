@@ -1,0 +1,397 @@
+body {
+font-size: 36px;
+background-color:rgb(14, 112, 63);
+color: rgb(195, 11, 146);
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(30, 200px);
+  grid-template-rows: repeat(30, 200px);
+  font-size: 140px;
+}
+
+.container > div:empty {
+  pointer-events: none;
+}
+
+
+.container > div {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container > div:hover p {
+  transform: scale(1.5);
+}
+
+.container {
+  overflow: visible;
+}
+
+.container > div {
+  position: relative;
+}
+
+
+.rabbit {
+  position: relative; /* needed for pseudo-elements */
+}
+
+.rabbit:hover {
+  background-image: url("../assets/rabbit.webp");
+  background-size: cover;
+  background-position: center;
+}
+
+.rabbit::before,
+.rabbit::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  pointer-events: none;
+}
+
+.rabbit::before { filter: hue-rotate(90deg); }
+.rabbit::after  { filter: hue-rotate(-90deg); }
+
+.rabbit:hover::before,
+.rabbit:hover::after {
+  background-image: url("../assets/rabbit.webp"); /* must repeat */
+  opacity: 1;
+  animation: glitch 0.2s infinite;
+}
+
+.home {
+  position: relative; /* needed for pseudo-elements */
+}
+
+.home:hover {
+  background-image: url("../assets/garden-hover.webp");
+  background-size: cover;
+  background-position: center;
+}
+
+.home::before,
+.home::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  pointer-events: none;
+}
+
+.home::before { filter: saturate(200%) blur(0.5px); }
+.home::after  { filter: saturate(180%) blur(0.5px); }
+
+.home:hover::before,
+.home:hover::after {
+  background-image: url("../assets/garden-hover.webp"); /* must repeat */
+  opacity: 1;
+  animation: glitch 1s infinite;
+}
+
+
+
+#grid-itemsquirrel1:hover {
+  background-image: url("../assets/squirrel.webp");
+  background-size: cover;
+  background-position: center;
+}
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+.grid-item {
+  z-index: 1;
+}
+
+
+.grid-item {
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.grid-item:hover {
+  transform: scale(1.8) rotate(-1deg);
+  filter: blur(1.5px) contrast(130%) saturate(140%);
+}
+
+.grid-item {
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes glitch {
+  0%   { transform: translate(0, 0); }
+  25%  { transform: translate(-2px, 2px); }
+  50%  { transform: translate(2px, -2px); }
+  75%  { transform: translate(-1px, 1px); }
+  100% { transform: translate(0, 0); }
+}
+
+/* hidden by default */
+.tent .tooltip {
+  position: absolute;
+  bottom: 100%; /* above the tent emoji */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(255,255,255,0.9);
+  color: #333;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 16px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+/* show tooltip on hover */
+.tent:hover .tooltip {
+  opacity: 1;
+}
+
+.loveflower {
+  position: relative; /* needed for pseudo-elements */
+}
+
+/* hidden by default */
+.loveflower .hover-text {
+  position: absolute;
+  color: #fff;
+  font-size: 24px;
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* make emoji disappear */
+.loveflower:hover p {
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+/* make text appear */
+.loveflower:hover .hover-text {
+  opacity: 1;
+}
+
+body {
+  cursor: url('../assets/cursor-rabbit.png') 16 16, auto;
+}
+
+.cat {
+  position: relative; /* needed for pseudo-elements */
+}
+
+.cat:hover {
+  background-image: url("../assets/cat.webp");
+  background-size: cover;
+  background-position: center;
+}
+
+.cat::before,
+.cat::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  pointer-events: none;
+}
+
+.cat::before { filter: hue-rotate(90deg); }
+.cat::after  { filter: hue-rotate(-90deg); }
+
+.cat:hover::before,
+.cat:hover::after {
+  background-image: url("../assets/cat.webp"); /* must repeat */
+  opacity: 1;
+  animation: glitch 0.2s infinite;
+}
+
+.bike {
+  position: relative; /* needed for pseudo-elements */
+}
+
+.bike:hover {
+  background-image: url("../assets/velo.webp");
+  background-size: cover;
+  background-position: center;
+}
+
+.bike::before,
+.bike::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  pointer-events: none;
+}
+
+
+.bike:hover::before,
+.bike:hover::after {
+  background-image: url("../assets/velo.webp"); /* must repeat */
+  opacity: 1;
+  animation: glitch 0.2s infinite;
+}
+
+.pizza {
+  position: relative; /* needed for pseudo-elements */
+}
+
+.pizza:hover {
+  background-image: url("../assets/pizza.webp");
+  background-size: cover;
+  background-position: center;
+}
+
+.pizza::before,
+.pizza::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  pointer-events: none;
+}
+
+.pizza::before { filter: hue-rotate(90deg); }
+.pizza::after  { filter: hue-rotate(-90deg); }
+
+.pizza:hover::before,
+.pizza:hover::after {
+  background-image: url("../assets/pizza.webp"); /* must repeat */
+  opacity: 1;
+  animation: glitch 0.1s infinite;
+}
+
+.beach {
+  position: relative; /* needed for pseudo-elements */
+}
+
+.beach:hover {
+  background-image: url("../assets/plage.webp");
+  background-size: cover;
+  background-position: center;
+}
+
+.beach::before,
+.beach::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  pointer-events: none;
+}
+
+.beach:hover::before,
+.beach:hover::after {
+  background-image: url("../assets/plage.webp"); /* must repeat */
+  opacity: 1;
+  animation: glitch 0.1s infinite;
+}
+
+.car {
+  position: relative; /* needed for pseudo-elements */
+}
+
+.car:hover {
+  background-image: url("../assets/car.webp");
+  background-size: cover;
+  background-position: center;
+}
+
+.car::before,
+.car::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  pointer-events: none;
+}
+
+.car:hover::before,
+.car:hover::after {
+  background-image: url("../assets/car.webp"); /* must repeat */
+  opacity: 1;
+  animation: glitch 0.1s infinite;
+}
+
+.cream {
+  position: relative; /* needed for pseudo-elements */
+}
+
+.cream:hover {
+  background-image: url("../assets/miam.webp");
+  background-size: cover;
+  background-position: center;
+}
+
+.cream::before,
+.cream::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  pointer-events: none;
+}
+
+.cream:hover::before,
+.cream:hover::after {
+  background-image: url("../assets/miam.webp"); /* must repeat */
+  opacity: 1;
+  animation: glitch 0.1s infinite;
+}
+
+.cricri {
+  position: relative; /* needed for pseudo-elements */
+}
+
+.cricri:hover {
+  background-image: url("../assets/cricri.webp");
+  background-size: cover;
+  background-position: center;
+}
+
+.cricri::before,
+.cricri::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  pointer-events: none;
+}
+
+
+.cricri:hover::before,
+.cricri:hover::after {
+  background-image: url("../assets/cricri.webp"); /* must repeat */
+  opacity: 1;
+  animation: glitch 0.2s infinite;
+}

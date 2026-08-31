@@ -1,0 +1,202 @@
+/* =========================
+   RESET / BASE
+========================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background: #cce9db;
+  overflow: auto;
+  font-family: sans-serif;
+}
+
+/* =========================
+   GLOBAL BACKGROUND SHIMMER
+========================= */
+.home {
+  position: relative;       
+  min-width: 200vw;
+  min-height: 200vh;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: visible; /* allow button to escape if needed */
+}
+
+.home::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;  /* behind all .bunfam content */
+
+  background-image: url("../assets/shimmer.webp");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  opacity: 0.40;  /* strong shimmer */
+  mix-blend-mode: overlay;
+
+  animation: glitterNoise 8s linear infinite 2s;
+}
+
+/* =========================
+   BUNFAM ELEMENTS
+========================= */
+.bunfam {
+  width: 90vw;
+  height: 90vh;
+  display: flex;
+padding-top: 50px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;             /* above background shimmer */
+  overflow: hidden;        /* contain internal shimmer */
+}
+
+/* =========================
+   SUBTLE SHIMMER INSIDE BUNFAM
+========================= */
+.content-mask::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;            /* behind images but above background */
+  
+  background-image: url("../assets/shimmer.webp");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  opacity: 0.10;         /* very subtle */
+  mix-blend-mode: overlay;
+
+  animation: glitterNoise2 6s linear infinite;
+}
+
+/* =========================
+   SHIMMER ANIMATION
+========================= */
+@keyframes glitterNoise {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(-30px, 30px); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes glitterNoise2 {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(-20px, 20px); }
+  100% { transform: translate(0, 0); }
+}
+
+/* =========================
+   OBJET FENÊTRE (AUTO-RATIO)
+========================= */
+.window {
+  position: relative;
+  display: inline-block;
+  width: var(--size, 600px);
+  aspect-ratio: var(--ratio, 1 / 1);
+}
+
+/* =========================
+   ZONE VISIBLE
+========================= */
+.content-mask {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.content-mask img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.4s ease;
+}
+
+.fit-cover .content-mask img { object-fit: cover; }
+.fit-contain .content-mask img { object-fit: contain; background: #000; }
+
+/* =========================
+   CADRE
+========================= */
+.window-frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* =========================
+   HOVER
+========================= */
+.img-after { opacity: 0; }
+
+.window:hover .img-after { opacity: 1; }
+.window:hover .img-before { opacity: 0; }
+
+/* =========================
+   COULEURS / PADDING
+========================= */
+#brown { padding-top: 50px; padding-left: 100px; }
+#red { padding-right: 400px; }
+#green { padding-top: 50px; padding-left: 300px; }
+#yellow { padding-top: 50px; padding-right: 100px; }
+#purple { padding-top: 50px; padding-left: 0px; }
+#black { padding-top: 50px; padding-left: 100px; }
+#orange { padding-top: 50px; padding-left: 100px; }
+#blue { padding-top: 50px; padding-left: 100px; }
+#grey { padding-top: 50px; padding-left: 100px; }
+
+/* =========================
+   CADRES MODULATIONS
+========================= */
+.window-red .content-mask { top: 12%; left: 14%; width: 72%; height: 68%; }
+.window-green .content-mask { top: 10%; left: 10%; width: 80%; height: 85%; }
+.window-yellow .content-mask { top: 20%; left: 15%; width: 70%; height: 63%; }
+.window-purple .content-mask { top: 0%; left: 0%; width: 90%; height: 70%; }
+.window-orange .content-mask { top: 15%; left: 25%; width: 55%; height: 65%; }
+.window-black .content-mask { top: 5%; left: 5%; width: 90%; height: 90%; }
+.window-blue .content-mask { top: 0%; left: 0%; width: 100%; height: 100%; }
+
+
+/* =========================
+   AUDIO BUTTON (ABOVE EVERYTHING)
+========================= */
+.cute-button {
+  position: fixed;
+  top: 40px;
+  left: 40px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  background-color: #a9ffaf39;
+  color: #00000011;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.033);
+  z-index: 9999999; /* extremely high to stay above shimmer and all content */
+}
+
+.cute-button:hover {
+  transform: scale(1.2);
+  box-shadow: 0 6px 10px rgba(0,0,0,0.3);
+}
+
+.cute-button:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.075);
+}
